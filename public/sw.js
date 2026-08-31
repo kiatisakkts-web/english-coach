@@ -1,4 +1,4 @@
-const CACHE = 'english-coach-v3';
+const CACHE = 'english-coach-v4';
 
 self.addEventListener('install', event => {
   event.waitUntil(caches.open(CACHE).then(cache => cache.addAll([new URL('./', self.registration.scope).toString(), new URL('manifest.webmanifest', self.registration.scope).toString()])));
