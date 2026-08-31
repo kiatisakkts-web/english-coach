@@ -45,4 +45,4 @@ The current compact implementation uses React + TypeScript + Vite, Dexie, Lucide
 
 ## Roadmap
 
-MediaRecorder is the supported speaking capture path. A tested Speech Recognition comparison helper is included for future UI wiring; physical speech recognition remains browser-dependent and is not required for recording practice. Speech features may depend on browser/OS services and microphone permissions. The app stores profile, settings, progress, lesson completion, vocabulary reviews, placement, and daily activity locally. JSON export/import uses schema version 3 and validates the complete supported payload.
+MediaRecorder is the supported speaking capture path, and Speaking includes an optional browser Speech Recognition match check with an approximate word score. Speech features may depend on browser/OS services and microphone permissions. The app stores profile, settings, progress, lesson completion, vocabulary reviews, placement, and daily activity locally. JSON export/import uses schema version 3 and validates the complete supported payload.
