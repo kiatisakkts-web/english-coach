@@ -1,7 +1,7 @@
-const CACHE = 'english-coach-v2';
+const CACHE = 'english-coach-v3';
 
 self.addEventListener('install', event => {
-  event.waitUntil(caches.open(CACHE).then(cache => cache.addAll(['/', '/manifest.webmanifest'])));
+  event.waitUntil(caches.open(CACHE).then(cache => cache.addAll([new URL('./', self.registration.scope).toString(), new URL('manifest.webmanifest', self.registration.scope).toString()])));
 });
 
 self.addEventListener('activate', event => {
@@ -17,5 +17,5 @@ self.addEventListener('fetch', event => {
       void caches.open(CACHE).then(cache => cache.put(event.request, copy));
       return response;
     });
-  }).catch(() => caches.match('/')));
+  }).catch(() => caches.match(new URL('./', self.registration.scope).toString())));
 });
