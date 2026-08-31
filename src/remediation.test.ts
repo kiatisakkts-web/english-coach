@@ -9,6 +9,7 @@ describe('release remediation regressions', () => {
     expect(validateLessons(lessons)).toBe(true);
     expect(new Set(lessons.map(lesson => lesson.dialogue.map(line => line.english).join('|'))).size).toBe(30);
     expect(new Set(lessons.map(lesson => lesson.reading.text)).size).toBe(30);
+    expect(lessons.every(lesson => lesson.dialogue.every(line => line.thai.trim() && /[\u0e00-\u0e7f]/.test(line.thai)))).toBe(true);
   });
   it('derives placement level and per-skill percentages from answers', () => {
     const none = scorePlacement(placementQuestions, []); expect(none.score).toBe(0); expect(none.level).toBe('A1');
