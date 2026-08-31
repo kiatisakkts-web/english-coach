@@ -1,0 +1,3 @@
+# Testing
+
+Run `npm run lint`, `npm run typecheck`, `npm run test`, `npm run test:e2e`, `npm run build`, then `npm run preview`. Unit tests cover lesson uniqueness and scoring helpers; Playwright Chromium covers onboarding persistence, all 30 lessons, idempotent completion, placement per-skill scoring, reading wrong-answer rejection, vocabulary review persistence, validated full-schema import, settings persistence, and mocked MediaRecorder record/stop/playback/delete. Manual hardware QA should grant microphone access, record, stop, play, delete, re-record, and navigate away while recording on a secure origin. Physical microphone verification remains a user acceptance step.
